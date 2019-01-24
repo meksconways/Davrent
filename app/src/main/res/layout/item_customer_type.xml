@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    android:layout_margin="16dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Müşteri Tipi: Otelde Yatan Müşteri"
+            android:textColor="@color/colorTextHeader"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:id="@+id/txt_header"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bu müşteri otelde çok yatıyor"
+            android:textColor="@color/colorTextHeader"
+            android:id="@+id/txt_desc"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sahip Olduğu İndirim: Otel Müşterisi"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextHeader"
+            android:id="@+id/txt_discountname"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="İndirim Miktarı: %86"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:id="@+id/txt_percent"
+            />
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
