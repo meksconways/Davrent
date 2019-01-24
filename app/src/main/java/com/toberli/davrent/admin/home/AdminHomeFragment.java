@@ -10,10 +10,14 @@ import com.toberli.davrent.R;
 import com.toberli.davrent.admin.categories.AdminCategoriesFragment;
 import com.toberli.davrent.admin.customertype.CustomerTypeFragment;
 import com.toberli.davrent.admin.discount.DiscountFragment;
+import com.toberli.davrent.admin.staff.AdminStaffFragment;
 import com.toberli.davrent.home.MainActivityViewModel;
+import com.toberli.davrent.viewmodel.ViewModelFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +34,8 @@ public class AdminHomeFragment extends Fragment {
 
     private Unbinder unbinder;
 
+    @Inject
+    ViewModelFactory factory;
     private AdminHomeViewModel viewmodel;
     private Context context;
     private MainActivityViewModel _viewmodel;
@@ -39,6 +45,9 @@ public class AdminHomeFragment extends Fragment {
     CardView card_discounts;
     @BindView(R.id.card_customer_type)
     CardView card_customerType;
+    @BindView(R.id.card_staffs)
+    CardView card_staffs;
+
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -63,46 +72,24 @@ public class AdminHomeFragment extends Fragment {
         card_categories.setOnClickListener(v -> setFragment(new AdminCategoriesFragment()));
         card_discounts.setOnClickListener(v -> setFragment(new DiscountFragment()));
         card_customerType.setOnClickListener(v -> setFragment(new CustomerTypeFragment()));
+        card_staffs.setOnClickListener(v -> setFragment(new AdminStaffFragment()));
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        _viewmodel = ViewModelProviders.of(getActivity()).get(MainActivityViewModel.class);
+        _viewmodel = ViewModelProviders.of(getActivity(),factory).get(MainActivityViewModel.class);
         _viewmodel.setShowToolbar(true);
         _viewmodel.setToolbarTitle("Admin Panel");
         _viewmodel.setNeedBackButton(false);
         viewmodel = ViewModelProviders.of(this).get(AdminHomeViewModel.class);
-        fillMenu();
-
     }
 
-    private List<AdminHomeModel> menuModel = new ArrayList<>();
 
 
-    private void fillMenu() {
-        int p1 = this.getResources().getIdentifier("ic_categories", "drawable", context.getPackageName());
-        int p2 = this.getResources().getIdentifier("ic_staffs", "drawable", context.getPackageName());
-        int p3 = this.getResources().getIdentifier("ic_product", "drawable", context.getPackageName());
-        int p4 = this.getResources().getIdentifier("ic_renting", "drawable", context.getPackageName());
-        int p5 = this.getResources().getIdentifier("ic_customer_type", "drawable", context.getPackageName());
-        int p6 = this.getResources().getIdentifier("ic_discount", "drawable", context.getPackageName());
-        int p7 = this.getResources().getIdentifier("ic_stock", "drawable", context.getPackageName());
-        int p8 = this.getResources().getIdentifier("ic_customer", "drawable", context.getPackageName());
 
-        menuModel.add(new AdminHomeModel("Kategoriler",p1,1));
-        menuModel.add(new AdminHomeModel("Personeller",p2,2));
-        menuModel.add(new AdminHomeModel("Ürünler",p3,3));
-        menuModel.add(new AdminHomeModel("Kiralama",p4,4));
-        menuModel.add(new AdminHomeModel("Müşteri Tipi",p5,5));
-        menuModel.add(new AdminHomeModel("İndirimler",p6,6));
-        menuModel.add(new AdminHomeModel("Stok",p7,7));
-        menuModel.add(new AdminHomeModel("Müşteri",p8,8));
 
-        viewmodel.setModel(menuModel);
-
-    }
 
     @Override
     public void onDestroyView() {

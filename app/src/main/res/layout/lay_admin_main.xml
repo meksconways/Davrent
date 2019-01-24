@@ -433,6 +433,7 @@
                     android:background="@drawable/gradient_background"
                     app:layout_constraintDimensionRatio="H,1:1"
                     app:cardCornerRadius="8dp"
+                    android:id="@+id/card_staffs"
                     >
 
                 <LinearLayout

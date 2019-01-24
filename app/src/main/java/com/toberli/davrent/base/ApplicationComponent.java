@@ -5,6 +5,8 @@ import com.toberli.davrent.admin.customertype.addcustomertype.AddCustomerTypeFra
 import com.toberli.davrent.admin.customertype.editcustomertype.EditCustomerTypeFragment;
 import com.toberli.davrent.admin.discount.AddEditDiscountFragment;
 import com.toberli.davrent.admin.discount.DiscountFragment;
+import com.toberli.davrent.admin.staff.AdminStaffFragment;
+import com.toberli.davrent.admin.staff.addstaff.AddStaffFragment;
 import com.toberli.davrent.home.MainActivity;
 import com.toberli.davrent.login.LoginFragment;
 import com.toberli.davrent.networking.NetworkModule;
@@ -38,4 +40,8 @@ public interface ApplicationComponent {
     void inject(EditCustomerTypeFragment editCustomerTypeFragment);
 
     void inject(AddCustomerTypeFragment addCustomerTypeFragment);
+
+    void inject(AdminStaffFragment adminStaffFragment);
+
+    void inject(AddStaffFragment addStaffFragment);
 }

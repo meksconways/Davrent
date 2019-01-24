@@ -102,7 +102,11 @@ public class AddEditDiscountFragment extends Fragment {
 
             if (viewmodel.getIsEdit().getValue()){
 
-                viewmodel.updateDiscount();
+                String _header = header.getText().toString().trim();
+                String _desc = desc.getText().toString().trim();
+                String _perc = perc.getText().toString().trim();
+
+                viewmodel.updateDiscount(_header,_desc,_perc);
 
             }else{
                 String _header = header.getText().toString().trim();

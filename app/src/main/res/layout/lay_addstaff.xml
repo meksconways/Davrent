@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/txt_name"
+        android:inputType="textCapWords"
+        android:hint="İsim Soyisim"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_phone"
+        android:maxLines="1"
+        android:maxLength="10"
+        android:inputType="phone"
+        android:hint="Telefon Numarası (Ör: 5XXXXXXXXX)"
+        android:layout_marginTop="8dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_pass"
+        android:hint="Parola"
+        android:maxLines="1"
+        android:inputType="textPassword"
+        android:layout_marginTop="8dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_pass_conf"
+        android:hint="Parola Tekrar"
+        android:maxLines="1"
+        android:inputType="textPassword"
+        android:layout_marginTop="8dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/btn_send"
+        android:text="Oluştur"
+        android:background="@color/colorAccent"
+        android:stateListAnimator="@null"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorWhite"
+        />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        />
+
+
+
+</LinearLayout>

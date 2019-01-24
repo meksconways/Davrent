@@ -4,7 +4,10 @@ import com.toberli.davrent.admin.customertype.CustomerTypeViewModel;
 import com.toberli.davrent.admin.customertype.addcustomertype.AddCustomerTypeViewModel;
 import com.toberli.davrent.admin.customertype.editcustomertype.EditCustomerTypeViewModel;
 import com.toberli.davrent.admin.discount.AddEditDiscountViewModel;
+import com.toberli.davrent.admin.discount.AddEditDiscountViewModel_Factory;
 import com.toberli.davrent.admin.discount.DiscountViewModel;
+import com.toberli.davrent.admin.staff.AdminStaffViewModel;
+import com.toberli.davrent.admin.staff.addstaff.AddStaffViewModel;
 import com.toberli.davrent.home.MainActivityViewModel;
 import com.toberli.davrent.login.LoginViewModel;
 import com.toberli.davrent.splash.SplashViewModel;
@@ -57,6 +60,16 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AddCustomerTypeViewModel.class)
     abstract ViewModel bindAddCustomerTypeVM(AddCustomerTypeViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AdminStaffViewModel.class)
+    abstract ViewModel bindstaffVM(AdminStaffViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddStaffViewModel.class)
+    abstract ViewModel bindAddstaffVM(AddStaffViewModel viewModel);
 
 
 

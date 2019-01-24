@@ -1,6 +1,7 @@
 package com.toberli.davrent.admin.customertype.editcustomertype;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.toberli.davrent.admin.customertype.model.Data;
 import com.toberli.davrent.admin.discount.model.DiscountModel;
@@ -100,32 +101,55 @@ public class EditCustomerTypeViewModel extends ViewModel {
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType,jsonObject.toString());
 
+        Log.d( "---updateCustomerType: ",jsonObject.toString());
+
+
         //noinspection ConstantConditions
         callCostumer = apiService.updateCostumerType(String.valueOf(data.getValue().id),header,body);
         callCostumer.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.body() != null){
+
+                Log.d("onResponse: ", String.valueOf(response.code()));
+
+                if (response.code() >= 200 && response.code() < 400){
                     bodyString.setValue("Müşteri Tipi Başarıyla Güncellendi");
                     showAlert.setValue(true);
                     showBottomLoading.setValue(false);
+                    callCostumer = null;
                 }else{
+
+
                     try {
+
+
                         if (response.errorBody() != null) {
+                            Log.d( "---updateCustomerType: ","error");
                             String error = Helper.getApiBadRequestError(response.errorBody().string());
                             bodyString.setValue(error);
                             showAlert.setValue(true);
                             showBottomLoading.setValue(false);
+                            callCostumer = null;
+                        }else{
+                            bodyString.setValue("Bir Hata Oluştu");
+                            showAlert.setValue(true);
+                            showBottomLoading.setValue(false);
+                            callCostumer = null;
+
+                            Log.d( "---updateCustomerType: ",response.toString());
                         }
                     } catch (IOException e) {
+                        Log.d( "---updateCustomerType: ","errorX");
                         e.printStackTrace();
                     }
                 }
+
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-
+                Log.d( "---updateCustomerType: ","fail");
+                callCostumer = null;
             }
         });
     }
@@ -166,5 +190,9 @@ public class EditCustomerTypeViewModel extends ViewModel {
             callCostumer.cancel();
             callCostumer = null;
         }
+    }
+
+     void setAlertValue(boolean b) {
+        showAlert.setValue(b);
     }
 }

@@ -111,7 +111,7 @@ public class EditCustomerTypeFragment extends Fragment {
         buttonSend.setOnClickListener(v -> {
 
             String _header = header.getText().toString().trim();
-            String _desc = header.getText().toString().trim();
+            String _desc = desc.getText().toString().trim();
 
             viewmodel.updateCustomerType(_header,_desc);
 
@@ -129,6 +129,7 @@ public class EditCustomerTypeFragment extends Fragment {
             if (is_api){
 
                 if (getActivity() != null) {
+                    viewmodel.setAlertValue(false);
                     getActivity().getSupportFragmentManager().popBackStack();
                 }
 
@@ -136,6 +137,8 @@ public class EditCustomerTypeFragment extends Fragment {
 
 
         });
+        builder.show();
+
     }
 
     private void observeViewModel() {
