@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Davrent</string>
+    <string name="changepassinfo">Eğer personelin parolasını değiştirmek isterseniz aşağıdaki alana yeni parolayı yazınız</string>
 </resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/txt_name"
+        android:inputType="textCapWords"
+        android:hint="İsim ve Soyisim"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:maxLength="10"
+        android:id="@+id/txt_staffphone"
+        android:inputType="number"
+        android:hint="Telefon Numarası (ÖR: 555XXXXXXX)"
+        android:layout_marginTop="8dp"
+        tools:ignore="TextFields" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Profili Güncelle"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_updateProfile"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/changepassinfo"
+        android:textColor="@color/colorTextBody"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:id="@+id/txt_pass"
+        android:hint="Yeni Parola"
+        android:layout_marginTop="8dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Parolayı Güncelle"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_updatePass"
+        />
+
+
+</LinearLayout>

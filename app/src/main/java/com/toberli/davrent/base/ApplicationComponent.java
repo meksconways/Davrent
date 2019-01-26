@@ -7,6 +7,7 @@ import com.toberli.davrent.admin.discount.AddEditDiscountFragment;
 import com.toberli.davrent.admin.discount.DiscountFragment;
 import com.toberli.davrent.admin.staff.AdminStaffFragment;
 import com.toberli.davrent.admin.staff.addstaff.AddStaffFragment;
+import com.toberli.davrent.admin.staff.editstaff.EditStaffFragment;
 import com.toberli.davrent.home.MainActivity;
 import com.toberli.davrent.login.LoginFragment;
 import com.toberli.davrent.networking.NetworkModule;
@@ -44,4 +45,6 @@ public interface ApplicationComponent {
     void inject(AdminStaffFragment adminStaffFragment);
 
     void inject(AddStaffFragment addStaffFragment);
+
+    void inject(EditStaffFragment editStaffFragment);
 }

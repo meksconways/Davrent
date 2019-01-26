@@ -66,13 +66,15 @@ public interface ApiService {
     Call<Void> addStaff(@HeaderMap Map<String,String> headerMap,
                            @Body RequestBody body);
 
-    @PATCH("admin/updateStaffProfile")
+    @PATCH("admin/updateStaffProfile/{id}")
     Call<Void> updateStaffProfile(@HeaderMap Map<String,String> headerMap,
-                                  @Body RequestBody body);
+                                  @Body RequestBody body,
+                                  @Path("id") String user_id);
 
-    @PATCH("admin/changeStaffPassword")
+    @PATCH("admin/changeStaffPassword/{id}")
     Call<Void> changeStaffPassword(@HeaderMap Map<String,String> headerMap,
-                                   @Body RequestBody body);
+                                   @Body RequestBody body,
+                                   @Path("id") String user_id);
 
 
 

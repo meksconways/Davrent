@@ -12,6 +12,8 @@ import android.widget.ProgressBar;
 
 import com.toberli.davrent.R;
 import com.toberli.davrent.admin.staff.addstaff.AddStaffFragment;
+import com.toberli.davrent.admin.staff.editstaff.EditStaffFragment;
+import com.toberli.davrent.admin.staff.editstaff.EditStaffViewModel;
 import com.toberli.davrent.admin.staff.model.Data;
 import com.toberli.davrent.base.MyApplication;
 import com.toberli.davrent.home.MainActivityViewModel;
@@ -133,6 +135,11 @@ public class AdminStaffFragment extends Fragment implements StaffSelectedListene
 
     @Override
     public void setSelectedStaff(Data data) {
-        // none for now
+        EditStaffViewModel viewModel = ViewModelProviders.of(getActivity(),factory).get(EditStaffViewModel.class);
+        viewModel.setData(data);
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.screen_container,new EditStaffFragment())
+                .commit();
     }
 }
