@@ -1,5 +1,6 @@
 package com.toberli.davrent.networking;
 
+import com.toberli.davrent.admin.categories.model.CategoriesModel;
 import com.toberli.davrent.admin.customertype.model.CustomerTypeModel;
 import com.toberli.davrent.admin.discount.editdismodel.EditDiscountModel;
 import com.toberli.davrent.admin.discount.model.DiscountModel;
@@ -10,7 +11,6 @@ import com.toberli.davrent.splash.model.SplashModel;
 import java.util.Map;
 
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -31,6 +31,10 @@ public interface ApiService {
     Call<LoginModel> login(@HeaderMap Map<String, String> map,
                            @Body RequestBody loginBody);
 
+
+
+
+
     @GET("{scope}/getDiscounts")
     Call<DiscountModel> getDiscount(@Path("scope") String scope,
                                     @HeaderMap Map<String,String> headerMap);
@@ -47,6 +51,10 @@ public interface ApiService {
                                            @Body RequestBody body);
 
 
+
+
+
+
     @GET("admin/getCustomerTypes")
     Call<CustomerTypeModel> getCustomerTypes(@HeaderMap Map<String,String> map);
 
@@ -58,6 +66,11 @@ public interface ApiService {
     @POST("admin/CustomerType")
     Call<Void> addCustomerType(@HeaderMap Map<String,String> map,
                                @Body RequestBody body);
+
+
+
+
+
 
     @GET("admin/getStaffs")
     Call<AdminStaffModel> getStaffs(@HeaderMap Map<String,String> map);
@@ -76,6 +89,22 @@ public interface ApiService {
                                    @Body RequestBody body,
                                    @Path("id") String user_id);
 
+
+
+
+
+
+    @GET("common/getCategories")
+    Call<CategoriesModel> getCategories(@HeaderMap Map<String,String> map);
+
+    @PATCH("common/updateCategory/{category_id}")
+    Call<Void> updateCategory(@HeaderMap Map<String,String> map,
+                              @Path("category_id") String id,
+                              @Body RequestBody body);
+
+    @POST("common/addCategory")
+    Call<Void> addCategory(@HeaderMap Map<String,String> headerMap,
+                           @Body RequestBody body);
 
 
 

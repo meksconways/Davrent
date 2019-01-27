@@ -1,5 +1,8 @@
 package com.toberli.davrent.base;
 
+import com.toberli.davrent.admin.categories.AdminCategoriesFragment;
+import com.toberli.davrent.admin.categories.addcategory.AddCategoryFragment;
+import com.toberli.davrent.admin.categories.editcategory.EditCategoryFragment;
 import com.toberli.davrent.admin.customertype.CustomerTypeFragment;
 import com.toberli.davrent.admin.customertype.addcustomertype.AddCustomerTypeFragment;
 import com.toberli.davrent.admin.customertype.editcustomertype.EditCustomerTypeFragment;
@@ -47,4 +50,10 @@ public interface ApplicationComponent {
     void inject(AddStaffFragment addStaffFragment);
 
     void inject(EditStaffFragment editStaffFragment);
+
+    void inject(AdminCategoriesFragment adminCategoriesFragment);
+
+    void inject(AddCategoryFragment addCategoryFragment);
+
+    void inject(EditCategoryFragment editCategoryFragment);
 }

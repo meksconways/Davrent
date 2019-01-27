@@ -1,5 +1,8 @@
 package com.toberli.davrent.viewmodel;
 
+import com.toberli.davrent.admin.categories.AdminCategoriesViewModel;
+import com.toberli.davrent.admin.categories.addcategory.AddCategoryViewModel;
+import com.toberli.davrent.admin.categories.editcategory.EditCategoryViewModel;
 import com.toberli.davrent.admin.customertype.CustomerTypeViewModel;
 import com.toberli.davrent.admin.customertype.addcustomertype.AddCustomerTypeViewModel;
 import com.toberli.davrent.admin.customertype.editcustomertype.EditCustomerTypeViewModel;
@@ -16,7 +19,6 @@ import androidx.lifecycle.ViewModel;
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
-import retrofit2.http.Body;
 
 @Module
 public abstract class ViewModelModule {
@@ -75,6 +77,21 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(EditStaffViewModel.class)
     abstract ViewModel bindEditstaffVM(EditStaffViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AdminCategoriesViewModel.class)
+    abstract ViewModel bindAdminCategoriesVM(AdminCategoriesViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddCategoryViewModel.class)
+    abstract ViewModel bindAddCategoryVM(AddCategoryViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EditCategoryViewModel.class)
+    abstract ViewModel bindEditCategoryViewModel(EditCategoryViewModel viewModel);
 
 
 
