@@ -37,7 +37,7 @@ public class EditCategoryViewModel extends ViewModel {
 
 
     @Inject
-    public EditCategoryViewModel(ApiService apiService, Context context) {
+    EditCategoryViewModel(ApiService apiService, Context context) {
         this.apiService = apiService;
         this.context = context;
     }
@@ -130,6 +130,6 @@ public class EditCategoryViewModel extends ViewModel {
     }
 
     public void setLoading(boolean b) {
-        loading.setValue(false);
+        loading.setValue(b);
     }
 }

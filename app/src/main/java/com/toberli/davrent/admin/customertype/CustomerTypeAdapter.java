@@ -22,7 +22,7 @@ public class CustomerTypeAdapter extends RecyclerView.Adapter<CustomerTypeAdapte
     private final List<Data> data = new ArrayList<>();
     private final CustomerTypeSelectedListener listener;
 
-    public CustomerTypeAdapter(CustomerTypeViewModel viewModel, LifecycleOwner owner,CustomerTypeSelectedListener listener) {
+    CustomerTypeAdapter(CustomerTypeViewModel viewModel, LifecycleOwner owner, CustomerTypeSelectedListener listener) {
         this.listener = listener;
         viewModel.getData().observe(owner, dataList -> {
             data.clear();

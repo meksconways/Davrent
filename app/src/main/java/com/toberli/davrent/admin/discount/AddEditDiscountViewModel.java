@@ -90,16 +90,13 @@ public class AddEditDiscountViewModel extends ViewModel {
 
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType,jsonObject.toString());
+        //noinspection ConstantConditions
         callUpdate = apiService.updateDiscount(AppDatabase.getScope(context), String.valueOf(datas.getValue().id),header,body);
         callUpdate.enqueue(new Callback<EditDiscountModel>() {
             @Override
             public void onResponse(Call<EditDiscountModel> call, Response<EditDiscountModel> response) {
 
                 loading.setValue(false);
-
-                if (response.code() >= 200 && response.code() < 400){
-
-                }
 
             }
 

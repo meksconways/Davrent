@@ -39,6 +39,10 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.17'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.17'
 
+    implementation 'com.github.blikoon:QRCodeScanner:0.1.2'
+    implementation 'com.github.nisrulz:qreader:2.1.2'
+    implementation 'com.budiyev.android:code-scanner:2.1.0'
+
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha01'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha01'

@@ -40,7 +40,7 @@ public class CustomerTypeViewModel extends ViewModel {
     }
 
     @Inject
-    public CustomerTypeViewModel(ApiService apiService, Context context) {
+    CustomerTypeViewModel(ApiService apiService, Context context) {
         this.apiService = apiService;
         this.context = context;
     }

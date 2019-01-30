@@ -60,19 +60,9 @@ public class SplashFragment extends Fragment {
 
         if (isNetworkConnected()){
 
-            Log.d( "***onViewCreated: ","0");
-
-            try {
-
-                Log.d( "***onViewCreated: ",AppDatabase.getToken(context));
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
 
             if (AppDatabase.getToken(context) != null){
 
-                Log.d( "***onViewCreated: ","1");
                 token = AppDatabase.getToken(context);
 
                 viewmodel.checkToken(token);

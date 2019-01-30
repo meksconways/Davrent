@@ -46,6 +46,10 @@ public class AddCustomerTypeViewModel extends ViewModel {
         discount_id.setValue(id);
     }
 
+    void setShowAlert(Boolean value){
+        showAlert.setValue(value);
+    }
+
     LiveData<String> getBodyString() {
         return bodyString;
     }
@@ -67,7 +71,7 @@ public class AddCustomerTypeViewModel extends ViewModel {
     }
 
     @Inject
-    public AddCustomerTypeViewModel(ApiService apiService, Context context) {
+    AddCustomerTypeViewModel(ApiService apiService, Context context) {
         this.apiService = apiService;
         this.context = context;
         getDiscounts();

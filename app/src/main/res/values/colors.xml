@@ -6,4 +6,5 @@
     <color name="colorTextHeader">#212121</color>
     <color name="colorTextBody">#313131</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorAndroid">#109d58</color>
 </resources>

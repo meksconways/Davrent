@@ -63,14 +63,14 @@
                 />
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="54dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
                 android:stateListAnimator="@null"
-                android:text="Giriş Yap"
+                android:text="GİRİŞ YAP"
+                android:backgroundTint="@color/colorTextBody"
                 android:textColor="@color/colorWhite"
-                android:background="@color/colorTextBody"
                 android:id="@+id/btn"
 
                 />

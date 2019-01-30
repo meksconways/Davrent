@@ -8,9 +8,13 @@ import android.view.ViewGroup;
 
 import com.toberli.davrent.R;
 import com.toberli.davrent.admin.categories.AdminCategoriesFragment;
+import com.toberli.davrent.admin.customer.CustomerFragment;
 import com.toberli.davrent.admin.customertype.CustomerTypeFragment;
 import com.toberli.davrent.admin.discount.DiscountFragment;
+import com.toberli.davrent.admin.product.ProductFragment;
+import com.toberli.davrent.admin.profile.ProfileFragment;
 import com.toberli.davrent.admin.staff.AdminStaffFragment;
+import com.toberli.davrent.database.AppDatabase;
 import com.toberli.davrent.home.MainActivityViewModel;
 import com.toberli.davrent.viewmodel.ViewModelFactory;
 
@@ -47,7 +51,14 @@ public class AdminHomeFragment extends Fragment {
     CardView card_customerType;
     @BindView(R.id.card_staffs)
     CardView card_staffs;
-
+    @BindView(R.id.card_profile)
+    CardView card_profile;
+    @BindView(R.id.card_goOut)
+    CardView card_goOut;
+    @BindView(R.id.card_customer)
+    CardView card_costumer;
+    @BindView(R.id.card_product)
+    CardView card_product;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -73,6 +84,14 @@ public class AdminHomeFragment extends Fragment {
         card_discounts.setOnClickListener(v -> setFragment(new DiscountFragment()));
         card_customerType.setOnClickListener(v -> setFragment(new CustomerTypeFragment()));
         card_staffs.setOnClickListener(v -> setFragment(new AdminStaffFragment()));
+        card_profile.setOnClickListener(v -> setFragment(new ProfileFragment()));
+        card_costumer.setOnClickListener(v -> setFragment(new CustomerFragment()));
+        card_product.setOnClickListener(v -> setFragment(new ProductFragment()));
+        card_goOut.setOnClickListener(v -> {
+            AppDatabase.deleteDatabase(context);
+            _viewmodel.setRouter(1);
+        });
+
         return view;
     }
 

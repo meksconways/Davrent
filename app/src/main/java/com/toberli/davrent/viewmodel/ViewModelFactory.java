@@ -24,7 +24,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
 
         try {
-            //noinspection unchecked
+
+            //noinspection unchecked,ConstantConditions
             return ((T) viewModels.get(modelClass).get());
 
         }catch (Exception e){

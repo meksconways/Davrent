@@ -49,8 +49,7 @@ public class SplashViewModel extends ViewModel {
     }
 
     void checkToken(String token) {
-        Log.d( "***checkToken: ","check token çağırıldı");
-        Log.d( "***checkToken: ",token);
+
         callProfile = apiService.checkToken(token, Helper.apikey);
         callProfile.enqueue(new Callback<SplashModel>() {
             @Override

@@ -154,6 +154,7 @@ public class AddCustomerTypeFragment extends Fragment {
             if (is_api){
 
                 if (getActivity() != null) {
+                    viewmodel.setShowAlert(false);
                     getActivity().getSupportFragmentManager().popBackStack();
                 }
 
@@ -161,6 +162,7 @@ public class AddCustomerTypeFragment extends Fragment {
 
 
         });
+        builder.show();
     }
 
     @Override

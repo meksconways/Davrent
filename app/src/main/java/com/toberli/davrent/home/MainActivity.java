@@ -1,5 +1,7 @@
 package com.toberli.davrent.home;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
@@ -7,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import dagger.Binds;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +22,7 @@ import com.toberli.davrent.admin.home.AdminHomeFragment;
 import com.toberli.davrent.base.MyApplication;
 import com.toberli.davrent.login.LoginFragment;
 import com.toberli.davrent.splash.SplashFragment;
+import com.toberli.davrent.staff.home.StaffHomePage;
 import com.toberli.davrent.viewmodel.ViewModelFactory;
 
 import javax.inject.Inject;
@@ -51,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     public void updateToolbarTitle(String title) {
         if (title != null) {
@@ -136,7 +150,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 3:
                     // staff
-                    Toast.makeText(this, "Staff", Toast.LENGTH_SHORT).show();
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.screen_container,new StaffHomePage())
+                            .disallowAddToBackStack()
+                            .commit();
                     break;
             }
 

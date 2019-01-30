@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="İsim Soyisim"
+            android:maxLines="1"
+            android:id="@+id/customerName"
+            android:inputType="text"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefon Numarası"
+            android:maxLines="1"
+            android:id="@+id/customerPhone"
+            android:inputType="phone"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextBody"
+            android:text="Müşteri Tipi"
+            android:layout_marginTop="8dp"
+            />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/spinner"
+            >
+
+        </Spinner>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Profili Güncelle"
+            android:stateListAnimator="@null"
+            android:id="@+id/btn_updateProfile"
+            android:textColor="@color/colorWhite"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAndroid"
+            android:text="Kiralamaları GÖr"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="8dp"
+            android:id="@+id/btn_goRents"
+            android:textColor="@color/colorWhite"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Ürün KİRALA"
+            android:id="@+id/btn_rentProduct"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorWhite"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
+

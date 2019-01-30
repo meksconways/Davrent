@@ -103,6 +103,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:cardCornerRadius="8dp"
+                    android:id="@+id/card_customer"
                     app:layout_constraintDimensionRatio="H,1:1">
 
                     <LinearLayout
@@ -302,6 +303,7 @@
                     android:background="@drawable/gradient_background"
                     app:layout_constraintDimensionRatio="H,1:1"
                     app:cardCornerRadius="8dp"
+                    android:id="@+id/card_product"
                     >
 
                     <LinearLayout
@@ -493,6 +495,7 @@
                     android:background="@drawable/gradient_background"
                     app:layout_constraintDimensionRatio="H,1:1"
                     app:cardCornerRadius="8dp"
+                    android:id="@+id/card_profile"
                     >
 
                 <LinearLayout
@@ -513,7 +516,7 @@
                         android:layout_weight="3"
                         android:padding="5dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ic_stock"
+                        android:src="@drawable/ic_person"
                         android:layout_gravity="center"
                         />
 
@@ -523,7 +526,7 @@
                         android:layout_weight="1"
                         android:layout_marginBottom="6dp"
                         android:textAlignment="center"
-                        android:text="Stok"
+                        android:text="Profilim"
                         android:textSize="16sp"
                         android:textColor="@color/colorWhite"
                         />
@@ -542,18 +545,57 @@
                 android:layout_height="match_parent">
 
 
-                <FrameLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:orientation="vertical"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-
+                    android:background="#c54545"
                     app:layout_constraintDimensionRatio="H,1:1"
+                    app:cardCornerRadius="8dp"
+                    android:id="@+id/card_goOut"
                     >
 
-                </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="#c54545"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:padding="5dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_power"
+                            android:layout_gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="6dp"
+                            android:textAlignment="center"
+                            android:text="Çıkış Yap"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorWhite"
+                            />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

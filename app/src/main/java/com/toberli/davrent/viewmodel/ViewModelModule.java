@@ -3,11 +3,18 @@ package com.toberli.davrent.viewmodel;
 import com.toberli.davrent.admin.categories.AdminCategoriesViewModel;
 import com.toberli.davrent.admin.categories.addcategory.AddCategoryViewModel;
 import com.toberli.davrent.admin.categories.editcategory.EditCategoryViewModel;
+import com.toberli.davrent.admin.customer.CustomerViewModel;
+import com.toberli.davrent.admin.customer.addcustomer.AddCustomerViewModel;
+import com.toberli.davrent.admin.customer.customerdetail.CustomerDetailViewModel;
+import com.toberli.davrent.admin.customer.customerdetail.rentproduct.RentProductViewModel;
 import com.toberli.davrent.admin.customertype.CustomerTypeViewModel;
 import com.toberli.davrent.admin.customertype.addcustomertype.AddCustomerTypeViewModel;
 import com.toberli.davrent.admin.customertype.editcustomertype.EditCustomerTypeViewModel;
 import com.toberli.davrent.admin.discount.AddEditDiscountViewModel;
 import com.toberli.davrent.admin.discount.DiscountViewModel;
+import com.toberli.davrent.admin.product.ProductViewModel;
+import com.toberli.davrent.admin.product.addproduct.AddProductViewModel;
+import com.toberli.davrent.admin.profile.ProfileViewModel;
 import com.toberli.davrent.admin.staff.AdminStaffViewModel;
 import com.toberli.davrent.admin.staff.addstaff.AddStaffViewModel;
 import com.toberli.davrent.admin.staff.editstaff.EditStaffViewModel;
@@ -92,6 +99,43 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(EditCategoryViewModel.class)
     abstract ViewModel bindEditCategoryViewModel(EditCategoryViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileViewModel.class)
+    abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CustomerViewModel.class)
+    abstract ViewModel bindCustomerViewModel(CustomerViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddCustomerViewModel.class)
+    abstract ViewModel bindAddCustomerViewModel(AddCustomerViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProductViewModel.class)
+    abstract ViewModel bindProductViewModell(ProductViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddProductViewModel.class)
+    abstract ViewModel bindAddProductViewModel(AddProductViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CustomerDetailViewModel.class)
+    abstract ViewModel bindCustomerDetailViewModel(CustomerDetailViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RentProductViewModel.class)
+    abstract ViewModel bindRentProductViewModel(RentProductViewModel viewModel);
+
+
 
 
 

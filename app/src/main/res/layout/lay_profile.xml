@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:id="@+id/txt_name"
+            android:inputType="textCapWords"
+            android:hint="İsim Soyisim"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_phone"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:inputType="phone"
+            android:hint="Telefon Numarası (Ör: 5XXXXXXXXX)"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:id="@+id/txt_totaladdedcustomer"
+            android:textColor="@color/colorAccent"
+            android:text="Eklenen Toplam Müşteri : 23"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:id="@+id/txt_totalrenting"
+            android:textColor="@color/colorAccent"
+            android:text="Toplam Kiralama : 21"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/btn_send"
+            android:text="Profili Güncelle"
+            android:background="@color/colorAccent"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:layout_marginTop="24dp"
+            android:id="@+id/txt_oldpass"
+            android:hint="Güncel Parola"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_newpass"
+            android:hint="Yeni Parola"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:id="@+id/txt_newpassagain"
+            android:hint="Yeni Parola Tekrar"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/btn_passUpdate"
+            android:text="Parolayı Güncelle"
+            android:background="@color/colorAccent"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
+

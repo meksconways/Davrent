@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/progressBar"
+        />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lyt_edit"
+        android:padding="16dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:id="@+id/txt_header"
+            android:inputType="textCapWords"
+            android:hint="Müşteri İsim Soyisim"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_phone"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:hint="Telefon Numarası (Ör: 555XXXXXXX)"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Müşteri Tipi Seçin"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextBody"
+            android:id="@+id/txt_indirim"
+            />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:id="@+id/spinner"
+            android:layout_marginTop="8dp"
+            >
+
+        </Spinner>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="OLUŞTUR"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/colorWhite"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="24dp"
+            android:id="@+id/btn"
+            />
+
+
+    </LinearLayout>
+
+</FrameLayout>
+
