@@ -34,7 +34,7 @@
                android:layout_centerVertical="true"
                android:textSize="36sp"
                android:layout_alignParentEnd="true"
-               android:textColor="@color/colorTextHeader"
+               android:textColor="@color/colorAndroid"
                android:id="@+id/txt_percent"
                />
 

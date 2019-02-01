@@ -96,6 +96,8 @@ public class ProfileFragment extends Fragment {
             if (data != null){
                 name.setText(data.name);
                 phone.setText(data.phone.substring(3));
+                total_customer.setText(String.format("Eklenen Toplam Müşteri : %s",data.totalCustomer));
+                total_rent.setText(String.format("Eklenen Toplam Kiralama : %s",data.totalRents));
             }
         });
         viewmodel.getAlertShow().observe(this, show -> {

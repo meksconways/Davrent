@@ -2,6 +2,7 @@ package com.toberli.davrent.networking;
 
 import com.toberli.davrent.admin.categories.model.CategoriesModel;
 import com.toberli.davrent.admin.customer.customerdetail.rentproduct.ProductInfoModel;
+import com.toberli.davrent.admin.customer.customerdetail.rentproduct.model.CalculateRentModel;
 import com.toberli.davrent.admin.customer.model.CustomerModel;
 import com.toberli.davrent.admin.customertype.model.CustomerTypeModel;
 import com.toberli.davrent.admin.discount.editdismodel.EditDiscountModel;
@@ -175,23 +176,21 @@ public interface ApiService {
      * @return
      */
     @POST("common/calculateRents/{customer_id}")
-    Call<Void> calculateRents(@HeaderMap Map<String,String> map,
-                              @Body RequestBody body,
-                              @Path("customer_id") String customerID);
+    Call<CalculateRentModel> calculateRents(@HeaderMap Map<String,String> map,
+                                            @Body RequestBody body,
+                                            @Path("customer_id") String customerID);
 
     @POST("common/saveRents/{customer_id}")
     Call<Void> saveRents(@HeaderMap Map<String,String> map,
                               @Body RequestBody body,
                               @Path("customer_id") String customerID);
 
+    @GET("common/returnRents/{id}")
+    Call<Void> returnProduct(@HeaderMap Map<String,String> map,
+                             @Path("id") String customerID);
 
 
 
-
-//    //calculateRents verileri : codes (1236547891|3256985236 vs. seklinde olmali) | rent_hours(kirada kalacağı süre saat cinsinden)
-//    $router->post("calculateRents/{customer_id}","RentsControllers@calculateRents");
-//    $router->post("saveRents/{customer_id}","RentsControllers@saveRents"); //bu veriler calculateRents ile aynı - bu servis üstteki ile aynı sadece arka işlevi farklı
-//    $router->get("returnRents/{customer_id}","RentsControllers@returnRents");
 
 
 

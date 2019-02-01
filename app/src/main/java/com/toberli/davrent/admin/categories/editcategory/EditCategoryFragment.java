@@ -52,7 +52,7 @@ public class EditCategoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.lay_addcategory,container,false);
+        View view = inflater.inflate(R.layout.lay_editcategory,container,false);
         unbinder = ButterKnife.bind(this,view);
         return view;
     }

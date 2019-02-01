@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA"/>
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,14 +21,13 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".home.MainActivity"
             android:windowSoftInputMode="stateHidden"
-            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
+
         </activity>
         <activity android:name=".admin.product.addproduct.AddProductActivity"
             android:launchMode="singleTop"
@@ -34,7 +35,9 @@
 
 
         </activity>
-        <activity android:name=".admin.product.addproduct.ReadQRActivity" />
+        <activity android:name=".admin.product.addproduct.ReadQRActivity"
+                    android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.toberli.davrent.admin.customer.customerdetail.rentproduct;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +22,15 @@ public class RentProductAdapter extends RecyclerView.Adapter<RentProductAdapter.
 
     private final List<Data> data = new ArrayList<>();
 
-    public RentProductAdapter(RentProductViewModel viewModel, LifecycleOwner owner) {
+    RentProductAdapter(RentProductViewModel viewModel, LifecycleOwner owner) {
 
-//        viewModel.getProductData().observe(owner, dataList -> {
-//            if (dataList != null){
-//                data.add(dataList);
-//            }
-//            notifyDataSetChanged();
-//        });
+        viewModel.getProductData().observe(owner, dataList -> {
+            if (dataList != null){
+                data.add(dataList);
+                notifyDataSetChanged();
+            }
+
+        });
 
     }
 
@@ -50,26 +52,24 @@ public class RentProductAdapter extends RecyclerView.Adapter<RentProductAdapter.
         return data.size();
     }
 
-    public void setdata(Data d) {
-        data.add(d);
-        notifyDataSetChanged();
+    void clearAll() {
+        data.clear();
     }
+
 
     static final class RentProductViewHolder extends RecyclerView.ViewHolder{
 
-        private Data data;
+
         @BindView(R.id.txt_productname)
         TextView productName;
 
         RentProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(itemView);
+            ButterKnife.bind(this,itemView);
         }
 
         void bind(Data data){
-            this.data = data;
             productName.setText(data.title);
-
         }
     }
 

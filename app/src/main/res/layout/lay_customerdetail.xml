@@ -38,7 +38,9 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@color/colorTextBody"
-            android:text="Müşteri Tipi"
+            android:text="Müşteri Tipi : "
+            android:textSize="15sp"
+            android:id="@+id/txt_customertype"
             android:layout_marginTop="8dp"
             />
         <Spinner
@@ -76,6 +78,16 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="Ürün KİRALA"
             android:id="@+id/btn_rentProduct"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorWhite"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#ff0000"
+            android:text="ÜRÜN İADESİ"
+            android:id="@+id/btn_iade"
             android:stateListAnimator="@null"
             android:layout_marginTop="8dp"
             android:textColor="@color/colorWhite"

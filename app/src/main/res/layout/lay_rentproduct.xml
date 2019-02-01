@@ -36,6 +36,45 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorTextBody"
+        android:textColor="@color/colorWhite"
+        android:text="Hesapla"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_calculate"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextBody"
+        android:text="İndirimsiz Fiyatı :"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:id="@+id/indirimsizFiyat"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAndroid"
+        android:text="İndirimli Fiyatı :"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:id="@+id/indirimliFiyat"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="İndirim Tutarı :"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:id="@+id/indirimTutari"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/colorAndroid"
         android:textColor="@color/colorWhite"
         android:text="KİRAYA EKLE"

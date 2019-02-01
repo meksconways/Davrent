@@ -126,7 +126,6 @@ public class CustomerFragment extends Fragment implements CustomerSelectedListen
     @Override
     public void customerSelectedListener(Data data) {
         if (getActivity() != null) {
-            // todo set data eklenicek
             CustomerDetailViewModel viewModel = ViewModelProviders.of(getActivity(),factory).get(CustomerDetailViewModel.class);
             viewModel.setData(data);
             getActivity().getSupportFragmentManager()

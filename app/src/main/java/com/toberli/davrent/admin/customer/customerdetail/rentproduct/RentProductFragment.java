@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.toberli.davrent.R;
@@ -36,14 +39,37 @@ public class RentProductFragment extends Fragment {
     private Context context;
     private Unbinder unbinder;
 
+    @BindView(R.id.txt_rentinghour)
+    EditText hour;
     @BindView(R.id.rv_product)
     RecyclerView recyclerView;
     @BindView(R.id.btn_addCode)
     Button btnAddCode;
+    @BindView(R.id.indirimliFiyat)
+    TextView indirimliFiyat;
+    @BindView(R.id.indirimsizFiyat)
+    TextView indirimsizFiyat;
+    @BindView(R.id.indirimTutari)
+    TextView indirimTutari;
+    @BindView(R.id.btn_calculate)
+    Button calculate;
+    @BindView(R.id.btn_addRent)
+    Button addRent;
 
     @Inject
     ViewModelFactory factory;
     private RentProductViewModel viewmodel;
+    private Integer user_id;
+
+
+    public static RentProductFragment newInstance(Integer user_id) {
+
+        Bundle args = new Bundle();
+        args.putInt("user_id",user_id);
+        RentProductFragment fragment = new RentProductFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -57,8 +83,17 @@ public class RentProductFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.lay_rentproduct,container,false);
         unbinder = ButterKnife.bind(this,view);
-
+        if (getArguments() != null) {
+            user_id = getArguments().getInt("user_id");
+        }
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        adapter.clearAll();
+        viewmodel.clearCodeAndData();
+        super.onDestroyView();
     }
 
     @Override
@@ -67,16 +102,25 @@ public class RentProductFragment extends Fragment {
         MainActivityViewModel _viewmodel = ViewModelProviders.of(getActivity(),factory).get(MainActivityViewModel.class);
         _viewmodel.setToolbarTitle("Ürün Kirala");
 
-        viewmodel = ViewModelProviders.of(getActivity(),factory).get(RentProductViewModel.class);
+        viewmodel = ViewModelProviders.of(this,factory).get(RentProductViewModel.class);
 
         observeViewModel();
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
         adapter = new RentProductAdapter(viewmodel,this);
         recyclerView.setAdapter(adapter);
         btnAddCode.setOnClickListener(v -> {
             Intent i = new Intent(context, ReadQRActivity.class);
             startActivityForResult(i,1);
         });
+        calculate.setOnClickListener(v -> {
+            viewmodel.setUserID(user_id);
+            viewmodel.calculateRent(hour.getText().toString().trim());
+        });
+        addRent.setOnClickListener(v -> {
+            viewmodel.setUserID(user_id);
+            viewmodel.saveRent(hour.getText().toString().trim());
+        });
+
     }
 
     @Override
@@ -113,7 +157,6 @@ public class RentProductFragment extends Fragment {
                     (dialog, which) -> {
                         dialog.dismiss();
 
-
                     });
             alertDialog.show();
 
@@ -121,10 +164,10 @@ public class RentProductFragment extends Fragment {
         if (requestCode == 1){
             if (data != null) {
                 String result=data.getStringExtra("result");
-                //viewmodel.getProductDataViaCode(result);
-                Toast.makeText(context, "Ürün Eklendi", Toast.LENGTH_SHORT).show();
-                //noinspection ConstantConditions
-                if (viewmodel.getCodes().getValue().matches("")){
+                viewmodel.getProductDataViaCode(result);
+                //Toast.makeText(context, "Ürün Eklendi", Toast.LENGTH_SHORT).show();
+
+                if (viewmodel.getCodes().getValue() == null){
                     viewmodel.addCode(result);
                 }else{
                     viewmodel.addCode("|"+viewmodel.getCodes().getValue()+"|"+result);
@@ -135,9 +178,28 @@ public class RentProductFragment extends Fragment {
     }
 
     private void observeViewModel() {
+
+        viewmodel.getCalculateData().observe(this, calData -> {
+            if (calData != null){
+                indirimsizFiyat.setText(String.format("İndirimsiz Fiyatı: %s",calData.totalPrice));
+                indirimTutari.setText(String.format("İndirim Tutarı: %s",calData.discountPrice));
+                indirimliFiyat.setText(String.format("İndirimli Fiyatı: %s",calData.endPrice));
+            }else{
+                indirimliFiyat.setText(null);
+                indirimsizFiyat.setText(null);
+                indirimTutari.setText(null);
+            }
+        });
+
         viewmodel.getProductData().observe(this, data -> {
-            adapter.setdata(data);
-            adapter.notifyDataSetChanged();
+            if (data != null){
+                recyclerView.setVisibility(View.VISIBLE);
+                Vibrator vib = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+                if (vib != null) {
+                    vib.vibrate(500);
+                }
+            }
+
         });
         viewmodel.getShowAlert().observe(this , show -> {
             if (show){

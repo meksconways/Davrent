@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
         viewmodel = ViewModelProviders.of(MainActivity.this,viewModelFactory).get(MainActivityViewModel.class);
 

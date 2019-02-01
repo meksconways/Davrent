@@ -42,6 +42,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:orientation="vertical"
+                    android:id="@+id/card_customer"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -155,6 +156,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:id="@+id/card_product"
                     android:orientation="vertical"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -236,65 +238,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:background="@drawable/gradient_background"
-                    app:layout_constraintDimensionRatio="H,1:1"
-                    app:cardCornerRadius="8dp"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:background="@drawable/gradient_background"
-                        app:layout_constraintDimensionRatio="H,1:1"
-                        >
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="3"
-                            android:padding="5dp"
-                            android:adjustViewBounds="true"
-                            android:src="@drawable/ic_renting"
-                            android:layout_gravity="center"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:layout_marginBottom="6dp"
-                            android:textAlignment="center"
-                            android:text="Kiralamalar"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorWhite"
-                            />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:layout_height="match_parent">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:background="@drawable/gradient_background"
-                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintDimensionRatio="H,16:9"
                     app:cardCornerRadius="8dp"
                     android:id="@+id/card_profile"
                     >
@@ -338,6 +282,7 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -354,7 +299,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:background="#c54545"
-                    app:layout_constraintDimensionRatio="H,1:1"
+                    app:layout_constraintDimensionRatio="H,16:9"
                     app:cardCornerRadius="8dp"
                     android:id="@+id/card_goOut"
                     >

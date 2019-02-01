@@ -43,7 +43,7 @@
             android:textSize="16sp"
             android:id="@+id/txt_totaladdedcustomer"
             android:textColor="@color/colorAccent"
-            android:text="Eklenen Toplam Müşteri : 23"
+            android:text="Eklenen Toplam Müşteri : "
             />
 
         <TextView
@@ -53,7 +53,7 @@
             android:textSize="16sp"
             android:id="@+id/txt_totalrenting"
             android:textColor="@color/colorAccent"
-            android:text="Toplam Kiralama : 21"
+            android:text="Eklenen Toplam Kiralama : "
             />
 
         <Button

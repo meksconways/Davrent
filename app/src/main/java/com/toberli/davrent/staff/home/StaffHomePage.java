@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 
 import com.toberli.davrent.R;
 import com.toberli.davrent.admin.categories.AdminCategoriesFragment;
+import com.toberli.davrent.admin.customer.CustomerFragment;
 import com.toberli.davrent.admin.customertype.CustomerTypeFragment;
 import com.toberli.davrent.admin.discount.DiscountFragment;
+import com.toberli.davrent.admin.product.ProductFragment;
 import com.toberli.davrent.admin.profile.ProfileFragment;
 import com.toberli.davrent.admin.staff.AdminStaffFragment;
 import com.toberli.davrent.base.MyApplication;
@@ -42,6 +44,11 @@ public class StaffHomePage extends Fragment {
     CardView card_profile;
     @BindView(R.id.card_goOut)
     CardView card_goOut;
+    @BindView(R.id.card_customer)
+    CardView card_customer;
+    @BindView(R.id.card_product)
+    CardView card_product;
+
     private MainActivityViewModel _viewmodel;
 
     @Override
@@ -80,6 +87,8 @@ public class StaffHomePage extends Fragment {
             AppDatabase.deleteDatabase(context);
             _viewmodel.setRouter(1);
         });
+        card_customer.setOnClickListener(v -> setFragment(new CustomerFragment()));
+        card_product.setOnClickListener(v -> setFragment(new ProductFragment()));
         return view;
     }
 

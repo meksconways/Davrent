@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,13 +69,17 @@ public class LoginFragment extends Fragment {
             
             String phone = edtPhone.getText().toString().trim();
             String password = edtPassword.getText().toString().trim();
+
             
             if (phone.matches("")){
-                showAlert("Lütfen Bir Telefon Numaranızı Girin");
+                edtPhone.setError("Lütfen Bir Telefon Numarası Giriniz");
+
+                //showAlert("Lütfen Bir Telefon Numarası Girin");
                 return;
             }
             if (password.matches("")){
-                showAlert("Parola Boş Olamaz");
+                edtPassword.setError("Parola Boş Olamaz");
+                //showAlert("Parola Boş Olamaz");
                 return;
             }
 
@@ -119,6 +125,7 @@ public class LoginFragment extends Fragment {
         progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Giriş Yapılıyor...");
         progressDialog.setCancelable(false);
+        edtPhone.setEllipsize(TextUtils.TruncateAt.END);
 
     }
 

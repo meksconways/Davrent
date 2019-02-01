@@ -8,6 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">#24C6DC</item>
         <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:ellipsize">end</item>
+
+
     </style>
 
 </resources>
